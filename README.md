@@ -7,7 +7,7 @@
 この Chrome 拡張機能は、X（旧 Twitter）のウェブサイトに行こうとすると、自動的に従来の Twitter の URL に切り替えてくれるツールです。`twitter.com` から `x.com` に変更された後も、慣れ親しんだ Twitter の URL を使い続けたい人のために作りました。
 
 ## この拡張機能で何ができるの？
-1. x.com や www.x.com のアドレスを入力すると、自動的に `twitter.com` に変更します。
+1. `x.com` や `www.x.com` のアドレスを入力すると、自動的に `twitter.com` に変更します。
 2. URLに `mx=1` パラメータを追加します。
 3. `www.twitter.com` でもこの拡張機能が正しく動作するようになりました（v1.1で修正）
 
