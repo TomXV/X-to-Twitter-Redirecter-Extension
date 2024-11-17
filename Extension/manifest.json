@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "X to Twitter Redirect",
-  "version": "1.2",
+  "version": "1.2.1",
   "description": "Redirects x.com, *.x.com, and *.twitter.com to twitter.com, adding the mx=1 parameter",
   "permissions": [
     "webNavigation"
@@ -16,8 +16,10 @@
     "service_worker": "background.js"
   },
   "icons": {
-    "16": "icon.png",
-    "48": "icon.png",
-    "128": "icon.png"
-  }
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "author": "Tom_XV"
 }
