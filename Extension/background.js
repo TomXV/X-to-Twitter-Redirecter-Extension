@@ -2,7 +2,7 @@ chrome.webNavigation.onBeforeNavigate.addListener(
   function(details) {
     const url = new URL(details.url);
 
-    if (url.hostname === 'x.com' || url.hostname === 'www.x.com') {
+    if (url.hostname.endsWith('x.com')) {
       url.hostname = 'twitter.com';
       url.searchParams.set('mx', '1');
 
@@ -11,10 +11,8 @@ chrome.webNavigation.onBeforeNavigate.addListener(
       }
 
       chrome.tabs.update(details.tabId, {url: url.toString()});
-    } else if ((url.hostname === 'twitter.com' || url.hostname === 'www.twitter.com') && !url.searchParams.has('mx')) {
-      if (url.hostname === 'www.twitter.com') {
-        url.hostname = 'twitter.com';
-      }
+    } else if (url.hostname.endsWith('twitter.com') && !url.searchParams.has('mx')) {
+      url.hostname = 'twitter.com';
       url.searchParams.set('mx', '1');
       chrome.tabs.update(details.tabId, {url: url.toString()});
     }
@@ -22,8 +20,7 @@ chrome.webNavigation.onBeforeNavigate.addListener(
   {
     url: [
       {hostSuffix: 'x.com'},
-      {hostSuffix: 'twitter.com'},
-      {hostSuffix: 'www.twitter.com'}
+      {hostSuffix: 'twitter.com'}
     ]
   }
 );
